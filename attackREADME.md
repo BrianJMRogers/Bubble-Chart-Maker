@@ -1,6 +1,6 @@
 ## Attack Method ##
 
-This attack proceeds under the assumption that the target file is called flag.txt and is located on the Desktop.
+This attack proceeds under the assumption that the target file is called flag.txt and is located on the Desktop. The file responsible for doing this is Coordinate.java.
 
 The key to this challenge is getting someone on the inside to run my code. I decided the best approach would be to solve a different challenge and to package the penetration attack along with the other challenge. Once the final package was complete, wrapping it all up in a jar file meant that the source code would not be immediately visible. Thus the attack is hidden inside the bubbles challenge.
 

