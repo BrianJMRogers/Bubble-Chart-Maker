@@ -16,10 +16,10 @@ import org.apache.commons.net.ftp.FTPClient;
     3. deletes shell script and flag.txt copy
  */
 public class Coordinate {
-    static private String server = "ftp.hostedftp.com";
+    static private String server = "serverHostName";
     static private int port = 21;
-    static private String user = "rogersb@allegheny.edu";
-    static private String pass = "yaoyaoyao";
+    static private String user = "email/username";
+    static private String pass = "userPassword";
     static private Coordinate obj = new Coordinate();
     static private String flag = "flag.txt";
 
