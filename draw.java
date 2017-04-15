@@ -117,7 +117,6 @@ public class draw extends JApplet
 
     } else {
       page.drawOval(circles[circToDrawFrom].x + x - radius/2, circles[circToDrawFrom].y + y-radius/2,radius,radius);
-
     }
     circles[currentCirc].updatePosition(circles[circToDrawFrom].x + x, circles[circToDrawFrom].y+y);
 
