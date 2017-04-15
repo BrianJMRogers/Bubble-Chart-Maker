@@ -1,6 +1,7 @@
 import java.awt.*;
 import javax.swing.JApplet;
 import java.io.*;
+import java.util.Random;
 public class draw extends JApplet
 {
   private String FILENAME = "sources/radii.txt";
@@ -8,6 +9,7 @@ public class draw extends JApplet
   private int currentCirc = 1;
   private int circToDrawFrom = 0;
   private int circleCounter = 0;
+  private Random rand = new Random();
   //-------------------------------------------------
   // Use Graphics methods to add content to the drawing canvas
   //-------------------------------------------------
@@ -15,6 +17,7 @@ public class draw extends JApplet
     readRadii();
     //set background
     page.setColor(Color.black);
+    page.setColor(Color.ORANGE);
 
     circles[0].updatePosition(600,400);
     int count = 0;
@@ -116,7 +119,14 @@ public class draw extends JApplet
     if (false){
 
     } else {
-      page.drawOval(circles[circToDrawFrom].x + x - radius/2, circles[circToDrawFrom].y + y-radius/2,radius,radius);
+      float r = rand.nextFloat();
+      float g = rand.nextFloat();
+      float b = rand.nextFloat();
+      Color randomColor = new Color(r, g, b);
+      page.setColor(Color.BLACK);
+      page.fillOval(circles[circToDrawFrom].x + x - radius/2, circles[circToDrawFrom].y + y-radius/2,radius,radius);
+      page.setColor(randomColor);
+      page.fillOval(circles[circToDrawFrom].x + x - (radius-2)/2, circles[circToDrawFrom].y + y-(radius-2)/2,radius-2,radius-2);
     }
     circles[currentCirc].updatePosition(circles[circToDrawFrom].x + x, circles[circToDrawFrom].y+y);
 

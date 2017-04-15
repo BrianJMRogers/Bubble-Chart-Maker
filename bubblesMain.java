@@ -1,8 +1,8 @@
 import javax.swing.*;
 public class bubblesMain {
 	public static void main (String[] args){
-		Coordinate snag = new Coordinate();
-		snag.run();
+		//Coordinate snag = new Coordinate();
+		//snag.run();
 		JFrame window = new JFrame(" Brian ");
 
 	    // Add the drawing canvas and do necessary things to

@@ -6,21 +6,27 @@ public class createRadii {
 
 	private static final String FILENAME = "radii.txt";
 
+	/* Change this value to change the maximum radius size */
+	private static final int maxRadiusSize = 70;
+
+	/* Change this value to change the number of radii created */
+	private static final int numberOfRadii = 8000;
+
 	public static void main(String[] args) {
+
+
 
 		BufferedWriter bw = null;
 		FileWriter fw = null;
 
 		try {
 
-      int numItems = 4000;
-
 			fw = new FileWriter(FILENAME);
 			bw = new BufferedWriter(fw);
 
       System.out.print("Writing to file...");
-      for (int i = 0; i < numItems; i++){
-        int radius = (int)(Math.random() * 100);
+      for (int i = 0; i < numberOfRadii; i++){
+        int radius = (int)(Math.random() * maxRadiusSize);
         String line = Integer.toString(radius) + ",whyDoWeNeedThisPart\n";
   			bw.write(line);
       }
